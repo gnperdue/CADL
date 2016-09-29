@@ -122,7 +122,6 @@ assert(X.get_shape().as_list() == [None, 2])
 assert(Yhat.get_shape().as_list() == [None, 1])
 assert(Y.get_shape().as_list() == [None, 1])
 
-
 # Cost Function
 #   \begin{equation}
 #   \text{cost}(Y, \hat{Y}) = \frac{1}{B} \sum_{b = 0}^B E_b
@@ -139,10 +138,8 @@ assert(sum_error.get_shape().as_list() == [None])
 cost = tf.reduce_mean(sum_error)
 assert(cost.get_shape().as_list() == [])
 
-
 # Now we need an optimizer.
 optimizer = tf.train.AdamOptimizer(learning_rate=0.001).minimize(cost)
-
 
 # TF, do your thing...
 
